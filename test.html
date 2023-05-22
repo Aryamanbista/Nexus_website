@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Nexus College Logo">
+        <nav>
+          <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+              <a title="About" href="#" class="dropbtn">About</a>
+              <div class="dropdown-content">
+                <a href="about.html">About Us</a>
+                <a href="story.html">Our Story</a>
+                <a href="mission.html">Our Mission</a>
+              </div>
+            </li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li> <!-- Added Gallery link -->
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="registrationform.html" class="register">Register</a></li>
+            <li><a href="login.html" class="register">Login</a></li>
+    
+          </ul>
+        </nav>
+      </header>
+    <div class="gallery" id="imageGallery">
+        <!-- Existing images in the gallery -->
+    </div>
+    
+    <form id="addImageForm">
+        <input type="text" id="imageUrlInput" placeholder="Image URL">
+        <input type="text" id="altTextInput" placeholder="Alt Text">
+        <button type="submit">Add Image</button>
+    </form>
+
+    <script>
+        // JavaScript code here
+        var addImageForm = document.getElementById('addImageForm');
+        addImageForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var imageUrlInput = document.getElementById('imageUrlInput');
+            var altTextInput = document.getElementById('altTextInput');
+
+            var imageUrl = imageUrlInput.value;
+            var altText = altTextInput.value;
+
+            if (imageUrl && altText) {
+                var gallery = document.getElementById('imageGallery');
+                var imageContainer = document.createElement('div');
+                imageContainer.classList.add('image-container');
+
+                var imageElement = document.createElement('img');
+                imageElement.src = imageUrl;
+                imageElement.alt = altText;
+
+                imageContainer.appendChild(imageElement);
+                gallery.appendChild(imageContainer);
+
+                imageUrlInput.value = '';
+                altTextInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="gallery.css">
+	<link rel="stylesheet" href="home.css">
+    <!-- <style> -->
+        <!-- * { -->
+            <!-- margin: 0; -->
+            <!-- padding: 0; -->
+            <!-- box-sizing: border-box; -->
+        <!-- } -->
+        
+        <!-- body { -->
+            <!-- overflow-x: hidden; -->
+        <!-- } -->
+        
+        <!-- h1 { -->
+    <!-- text-align: center; -->
+    <!-- position: relative; -->
+<!-- } -->
+
+<!-- h1::after { -->
+    <!-- content: ""; -->
+    <!-- position: absolute; -->
+    <!-- bottom: -5px; -->
+    <!-- left: 600px; -->
+    <!-- width: 40px; -->
+    <!-- height: 3px; -->
+    <!-- background-color: green; -->
+<!-- } -->
+
+        <!-- .gallery { -->
+            <!-- display: flex; -->
+            <!-- flex-wrap: wrap; -->
+            <!-- justify-content: center; -->
+            <!-- gap: 20px; -->
+            <!-- margin-top: 20px; -->
+        <!-- } -->
+
+        <!-- .image-container { -->
+            <!-- position: relative; -->
+            <!-- flex-basis: calc(50% - 20px); -->
+            <!-- height: 300px; -->
+            <!-- overflow: hidden; -->
+            <!-- cursor: pointer; -->
+        <!-- } -->
+
+        <!-- .image-container img { -->
+            <!-- width: 100%; -->
+            <!-- height: 100%; -->
+            <!-- object-fit: cover; -->
+            <!-- transition: transform 0.3s ease; -->
+        <!-- } -->
+
+        <!-- .image-container:hover img { -->
+            <!-- transform: scale(1.1); -->
+        <!-- } -->
+
+        <!-- .overlay { -->
+            <!-- position: absolute; -->
+            <!-- top: 0; -->
+            <!-- left: 0; -->
+            <!-- width: 100%; -->
+            <!-- height: 100%; -->
+            <!-- background-color: rgba(0, 0, 0, 0.5); -->
+            <!-- opacity: 0; -->
+            <!-- transition: opacity 0.3s ease; -->
+        <!-- } -->
+
+        <!-- .image-container:hover .overlay { -->
+            <!-- opacity: 1; -->
+        <!-- } -->
+
+        <!-- .overlay-content { -->
+            <!-- display: flex; -->
+            <!-- flex-direction: column; -->
+            <!-- justify-content: center; -->
+            <!-- align-items: center; -->
+            <!-- height: 100%; -->
+            <!-- color: #fff; -->
+            <!-- text-align: center; -->
+        <!-- } -->
+
+        <!-- h2 { -->
+            <!-- margin: 0; -->
+            <!-- font-size: 1.5rem; -->
+            <!-- font-weight: normal; -->
+        <!-- } -->
+
+        <!-- .cover-image { -->
+            <!-- width: 100%; -->
+            <!-- height: 400px; -->
+            <!-- margin-bottom:20px; -->
+            <!-- margin-top: 5px; -->
+            <!-- position: relative; -->
+        <!-- } -->
+
+        <!-- .cover-image img { -->
+            <!-- width: 100%; -->
+            <!-- height: 100%; -->
+            <!-- object-fit: cover; -->
+        <!-- } -->
+        
+        <!-- .cover-image .overlay { -->
+            <!-- opacity: 1; -->
+        <!-- } -->
+        
+        <!-- .cover-image .overlay-content { -->
+            <!-- opacity: 1; -->
+        <!-- } -->
+
+        <!-- @media (max-width: 768px) { -->
+            <!-- .image-container { -->
+                <!-- flex-basis: 100%; -->
+                <!-- height: 200px; -->
+            <!-- } -->
+        <!-- } -->
+    <!-- </style> -->
+    <title>Nexus Collage Gallery</title>
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+        <ul class="menu">
+           <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login2.html" class="register">Login</a></li>
+
+        </ul>
+    </nav>
+</header>
+    <script>
+        // JavaScript code here
+        function changeImage(imageUrl, altText) {
+            var gallery = document.getElementById('imageGallery');
+            var imageContainers = gallery.getElementsByClassName('image-container');
+            
+            // Loop through all image containers and update the images
+            for (var i = 0; i < imageContainers.length; i++) {
+                var imageContainer = imageContainers[i];
+                var imgElement = imageContainer.getElementsByTagName('img')[0];
+                imgElement.src = imageUrl;
+                imgElement.alt = altText;
+            }
+        }
+
+        // Example usage:
+        changeImage('images/pics.jpg', 'New Image');
+    </script>
+    <div class="cover-image">
+        <img src="images/graduate.jpg" alt="Cover Image">
+        <div class="overlay">
+            <div class="overlay-content">
+                <h2>Gallery</h2>
+            </div>
+        </div>
+    </div>
+    <h1>Our memories</h1>
+    <div class="gallery">
+        <a href="year2020.html" class="image-container">
+            <img src="images/graduation.jpg" alt="Representative Image 2020">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h2>2020</h2>
+                </div>
+            </div>
+        </a>
+        <a href="year2021.html" class="image-container">
+            <img src="images/classroom.jpg" alt="Representative Image 2021">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h2>2021</h2>
+                </div>
+            </div>
+        </a>
+        <a href="year2023.html" class="image-container">
+            <img src="images/study2.jpg" alt="Representative Image 2023">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h2>2023</h2>
+                </div>
+            </div>
+        </a>
+        <a href="year2024.html" class="image-container">
+            <img src="images/study1.jpg" alt="Representative Image 2024">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h2>2024</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+<div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+          <i class="fab fa-facebook"></i>
+          <span>facebook.com/nexuscollege</span>
+        </a>
+        <a href="https://twitter.com/nexuscollege">
+          <i class="fab fa-twitter"></i>
+          <span>twitter.com/nexuscollege</span>
+        </a>
+        <a href="https://www.instagram.com/nexuscollege">
+          <i class="fab fa-instagram"></i>
+          <span>instagram.com/nexuscollege</span>
+        </a>
+</div>
+<div class="contact-info">
+    <p>Contact Us</p>
+        <p>+977-984232567701,554422</p>
+        <p>Maitidevi, Kathmandu, Nepal</p>
+        <p>nexuscollege@gmail.com</p>
+</div>
+<footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

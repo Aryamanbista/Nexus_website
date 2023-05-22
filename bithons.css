@@ -1,0 +1,76 @@
+        .course-description {
+            margin: 20px;
+        }
+
+        .course-description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .course-description p {
+            margin-bottom: 10px;
+        }
+
+        .course-description table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .course-description table th,
+        .course-description table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .image-slideshow {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-slideshow img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .image-slideshow img.active {
+            display: block;
+        }
+
+        .slideshow-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .slideshow-controls button {
+            background-color: #555;
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+
+        .slideshow-indicators {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slideshow-indicators button {
+            background-color: #bbb;
+            border: none;
+            color: #fff;
+            padding: 8px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
+
+        .slideshow-indicators button.active {
+            background-color: #888;
+        }

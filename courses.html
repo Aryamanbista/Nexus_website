@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <title>Courses</title>
+  <style>
+    /* Add your custom styles here */
+    @media (max-width: 768px) {
+      /* Media query for screens smaller than 768px */
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .menu-dropdown {
+        display: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+      }
+
+      .menu-dropdown.show {
+        display: block;
+      }
+
+      /* Styles to maintain the navigation bar style */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu-toggle,
+      .menu-dropdown {
+        flex-basis: 50px; /* Adjust the width as needed */
+      }
+
+      .menu-toggle {
+        justify-content: center;
+      }
+
+      .menu-dropdown ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+
+      .menu-dropdown ul li {
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .custom-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        margin-bottom: 20px;
+      }
+
+      .image-box {
+        flex-basis: 100%;
+      }
+
+      .text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login.html" class="register">Login</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+      <div class="menu-dropdown">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="registrationform.html" class="register">Register</a></li>
+          <li><a href="login.html" class="register">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <h1>Our courses</h1>
+  <div class="custom-container">
+    <div class="row">
+      <div class="image-box background1overlay">
+        <a href="bithons.html"><img src="images/bit.jpg" alt="Background Image 1">
+          <div class="text">Bachelors of Information Technology<br>(BIT)</div>
+        </a>
+      </div>
+      <div class="image-box background2overlay">
+        <a href="BHM.html"><img src="images/bhm.jpg" alt="Background Image 2">
+          <div class="text">Bachelors of Business (Hospitality Management) (Hons) (BHM)</div>
+        </a>
+      </div>
+      <div class="image-box background3overlay">
+        <a href="BoB.html"><img src="images/fin.png" alt="Background Image 3">
+          <div class="text">Bachelors of Business (Finance) (Hons)</div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="image-box background4overlay">
+        <a href="ca.html"><img src="images/culi.jpg" alt="Background Image 4">
+          <div class="text">Diploma in Culinary Arts and Supervision</div>
+        </a>
+      </div>
+      <div class="image-box background5overlay">
+        <a href="dcp.html"><img src="images/conf.jpg" alt="Background Image 5">
+          <div class="text">Diploma in Professional Patisserie and Confectionery</div>
+        </a>
+      </div>
+      <div class="image-box background6overlay">
+        <a href="icb.html"><img src="images/bari.jpg" alt="Background Image 6">
+          <div class="text">International Certificate in Barista</div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="image-box background7overlay">
+        <a href="DCA.html"><img src="images/care.jpg" alt="Background Image 7">
+          <div class="text">Diploma in Care Giver Assistance</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+      <i class="fab fa-facebook"></i>
+      <span>facebook.com/nexuscollege</span>
+    </a>
+    <a href="https://twitter.com/nexuscollege">
+      <i class="fab fa-twitter"></i>
+      <span>twitter.com/nexuscollege</span>
+    </a>
+    <a href="https://www.instagram.com/nexuscollege">
+      <i class="fab fa-instagram"></i>
+      <span>instagram.com/nexuscollege</span>
+    </a>
+  </div>
+
+  <div class="contact-info">
+    <p>Contact Us</p>
+    <p>+977-984232567701,554422</p>
+    <p>Maitidevi, Kathmandu, Nepal</p>
+    <p>nexuscollege@gmail.com</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript code for toggling the mobile menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuDropdown = document.querySelector('.menu-dropdown');
+
+    menuToggle.addEventListener('click', function () {
+      menuDropdown.classList.toggle('show');
+    });
+  </script>
+</body>
+
+</html>

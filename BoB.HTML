@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Nexus College - Courses</title>
+	<link rel="stylesheet" href="bithons.css">
+	<link rel="stylesheet" href="home.css">
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+        <ul class="menu">
+           <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login2.html" class="register">Login</a></li>
+
+        </ul>
+    </nav>
+</header>
+<div class="course-description">
+    <h2>Bachelors of Business (Finance)  (Hons)</h2>
+    <p>A Bachelor of Business (Finance) (Hons) degree is a program that provides students with a comprehensive understanding of finance principles and practices in the business context. It equips students with the knowledge and skills necessary for various roles in finance, banking, investment, and corporate sectors.</p>
+    <p>Scope of BoB <br>The scope of a Bachelor of Business (Finance) degree is broad and offers diverse career opportunities in the field of finance. Graduates can pursue roles in finance, banking, investment, and corporate sectors. They can work in financial analysis, helping organizations make informed decisions based on financial data. 
+
+        Financial analysis and planning
+        Investment management
+        Corporate finance
+        Risk management
+        Banking and financial institutions
+        International finance
+        Financial markets and instruments
+        Financial accounting and reporting
+        Financial modeling and analysis</p>
+    <p>Information about job placement after the course.<br>Our internship program provides college students 
+	with a guaranteed internship placement in premier companies. Nexus College offers an internship 
+	in Malaysia, India, China, Bahrain, and Japan
+
+The purpose of these programs is to provide students with business management basics, to offer the possibility of gaining international experience, to prepare them to work in a professional environment as well as to increase the competitiveness of graduates in the  market.</p>
+
+    <h3>Syllabus</h3>
+    <table>
+  <tr>
+    <th>Course Code</th>
+    <th>Course Title</th>
+    <th>Credit Hours</th>
+  </tr>
+  <tr>
+    <td>BoB101</td>
+    <td>Introduction to Finance</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BoB102</td>
+    <td>Financial Accounting</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>BoB103</td>
+    <td>Managerial Accounting</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BoB104</td>
+    <td>Principles of Economics</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>BoB105</td>
+    <td>Business Statistics</td>
+    <td>4</td>
+  </tr>
+  <!-- Add more rows for additional subjects -->
+  <tr>
+    <td>BoB106</td>
+    <td>Business Law and Ethics</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BoB107</td>
+    <td>Investments and Portfolio Management</td>
+    <td>3</td>
+  </tr>
+  
+</table>
+
+</div>
+
+<div class="image-slideshow">
+    <img src="images/cook.jpg" alt="Image 1" class="active">
+    <img src="images/cook4.jpg" alt="Image 2">
+    <img src="images/graduate.jpg" alt="Image 3">
+
+    <div class="slideshow-controls">
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+
+    <div class="slideshow-indicators">
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+    </div>
+</div>
+<div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+          <i class="fab fa-facebook"></i>
+          <span>facebook.com/nexuscollege</span>
+        </a>
+        <a href="https://twitter.com/nexuscollege">
+          <i class="fab fa-twitter"></i>
+          <span>twitter.com/nexuscollege</span>
+        </a>
+        <a href="https://www.instagram.com/nexuscollege">
+          <i class="fab fa-instagram"></i>
+          <span>instagram.com/nexuscollege</span>
+        </a>
+</div>
+<div class="contact-info">
+    <p>Contact Us</p>
+        <p>+977-984232567701,554422</p>
+        <p>Maitidevi, Kathmandu, Nepal</p>
+        <p>nexuscollege@gmail.com</p>
+</div>
+<footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".image-slideshow img");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const indicators = document.querySelectorAll(".slideshow-indicators button");
+
+        let currentIndex = 0;
+        let interval;
+
+        function showSlide(index) {
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            indicators.forEach((indicator) => {
+                indicator.classList.remove("active");
+            });
+
+            slides[index].classList.add("active");
+            indicators[index].classList.add("active");
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        }
+
+        function jumpToSlide(index) {
+            currentIndex = index;
+            showSlide(currentIndex);
+        }
+
+        function startSlideshow() {
+            interval = setInterval(() => {
+                nextSlide();
+            }, 2000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(interval);
+        }
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            stopSlideshow();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            stopSlideshow();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+                jumpToSlide(index);
+                stopSlideshow();
+            });
+        });
+
+        startSlideshow();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+
+  <title>About</title>
+  <style>
+    /* Add your custom styles here */
+    @media (max-width: 768px) {
+      /* Media query for screens smaller than 768px */
+      .menu {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .menu-dropdown {
+        display: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+      }
+
+      .menu-dropdown.show {
+        display: block;
+      }
+
+      /* Styles to maintain the navigation bar style */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu-toggle,
+      .menu-dropdown {
+        flex-basis: 50px; /* Adjust the width as needed */
+      }
+
+      .menu-toggle {
+        justify-content: center;
+      }
+
+      .menu-dropdown ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+
+      .menu-dropdown ul li {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login.html" class="register">Login</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+      <div class="menu-dropdown">
+        <ul class="dropdown-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="gallery1.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="registrationform.html" class="register">Register</a></li>
+          <li><a href="login.html" class="register">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <h2>About Nexus</h2>
+  <p>Nexus is a leading technology company that specializes in providing innovative solutions for businesses and individuals. With a passion for cutting-edge technology and a customer-centric approach, we strive to deliver exceptional products and services that meet the evolving needs of our clients.</p>
+  <p>At Nexus, we believe in the power of technology to transform businesses and enhance lives. We offer a wide range of products and services, including software development, web design, mobile app development, and IT consulting. Our team of experienced professionals is dedicated to delivering high-quality solutions that drive growth and efficiency.</p>
+  <p>What sets us apart is our commitment to excellence and our focus on building strong relationships with our clients. We work closely with each client to understand their unique requirements and tailor our solutions to meet their specific goals. Customer satisfaction is at the core of everything we do.</p>
+  <p>With a track record of successful projects and satisfied clients, Nexus has earned a reputation for reliability, professionalism, and technical expertise. We are proud to be a trusted partner for businesses across industries.</p>
+  <p>Contact us today to learn more about how Nexus can help your business thrive in the digital age.</p>
+  <div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+      <i class="fab fa-facebook"></i>
+      <span>facebook.com/nexuscollege</span>
+    </a>
+    <a href="https://twitter.com/nexuscollege">
+      <i class="fab fa-twitter"></i>
+      <span>twitter.com/nexuscollege</span>
+    </a>
+    <a href="https://www.instagram.com/nexuscollege">
+      <i class="fab fa-instagram"></i>
+      <span>instagram.com/nexuscollege</span>
+    </a>
+  </div>
+  <div class="contact-info">
+    <p>Contact Us</p>
+    <p>+977-984232567701,554422</p>
+    <p>Maitidevi, Kathmandu, Nepal</p>
+    <p>nexuscollege@gmail.com</p>
+  </div>
+  <footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Add JavaScript code for toggling the hamburger menu
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('.menu-dropdown').classList.toggle('show');
+    });
+  </script>
+</body>
+
+</html>

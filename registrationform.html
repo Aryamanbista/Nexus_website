@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <title>College Registration Form</title>
+  <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login.html" class="register">Login</a></li>
+
+      </ul>
+    </nav>
+  </header>
+      <div class="container">
+        <h2>Students Registration Form</h2>
+        <form action="submit.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="dob-day">Date of Birth:</label>
+                <div class="dob-group">
+                  <input type="number" id="dob-day" name="dob-day" required placeholder="Day" min="1" max="31">
+                  <input type="number" id="dob-month" name="dob-month" required placeholder="Month" min="1" max="12">
+                  <input type="number" id="dob-year" name="dob-year" required placeholder="Year" min="1900" max="2023">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+              </div>
+              
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="Enter your address">
+                  </div>
+          <div class="form-group">
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+              <option value="">Select a course</option>
+              <option value="Bachelors of Business (Hospitality Management) (Hons) (BHM)">Bachelors of Business (Hospitality Management) (Hons) (BHM)</option>
+              <option value="Bachelors of Business (Finance) (Hons)">Bachelors of Business (Finance) (Hons)</option>
+              <option value="Bachelor of Information Technology (Hons)">Bachelor of Information Technology (Hons)</option>
+              <option value="Diploma in Culinary Arts and Supervision">Diploma in Culinary Arts and Supervision</option>
+              <option value="Diploma in Professional Patisserie and Confectionery">Diploma in Professional Patisserie and Confectionery</option>
+              <option value="International Certificate in Barista">International Certificate in Barista</option>
+              <option value="Diploma in Care Giver Assistance">Diploma in Care Giver Assistance</option>
+            </select>
+          </div>
+          
+        <div class="form-group">
+            <label>References:</label><br>
+            <input type="radio" id="reference1" name="reference" value="Social Media">
+            <label for="reference1">Social Media</label>
+            <input type="radio" id="reference2" name="reference" value="Students of this college">
+            <label for="reference2">Students of this college</label>
+            <input type="radio" id="reference3" name="reference" value="Teachers">
+            <label for="reference3">Teachers</label>
+            <input type="radio" id="reference4" name="reference" value="Others">
+            <label for="reference4">Others</label>
+          </div>
+          <div class="form-group">
+            <label>Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+          </div>
+          <div class="form-group submit-button">
+            <input type="submit" value="Submit">
+          </div>         
+        
+      </form>
+      </div>
+      <script>
+        // JavaScript code goes here
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            
+            // Retrieve form data
+            var nameInput = document.getElementById("name");
+            var name = nameInput.value;
+            var emailInput = document.getElementById("email");
+            var email = emailInput.value;
+            var courseSelect = document.getElementById("course");
+            var course = courseSelect.value;
+            var references = document.querySelectorAll('input[name="reference"]:checked');
+            var messageInput = document.getElementById("message");
+            var message = messageInput.value;
+            
+            // Perform validation
+            var namePattern = /^[A-Za-z]+$/; // Regular expression to match alphabetic characters only
+            var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Regular expression to validate email format
+            
+            if (!namePattern.test(name)) {
+                alert("Please enter a valid name without numbers.");
+                nameInput.focus();
+                return;
+            }
+            
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                emailInput.focus();
+                return;
+            }
+            
+            if (course === "") {
+                alert("Please select a course.");
+                courseSelect.focus();
+                return;
+            }
+            
+            if (references.length === 0) {
+                alert("Please select at least one reference.");
+                return;
+            }
+            
+            // If all validations pass, you can proceed with form submission or further processing
+            alert("Form submitted successfully!");
+            
+            // Reset the form
+            document.getElementById("registrationForm").reset();
+        });
+      </script>
+        <div class="useful-links">
+          <a href="https://www.facebook.com/nexuscollege" target="_blank">
+            <i class="fab fa-facebook"></i>
+            <span>facebook.com/nexuscollege</span>
+          </a>
+          <a href="https://twitter.com/nexuscollege">
+            <i class="fab fa-twitter"></i>
+            <span>twitter.com/nexuscollege</span>
+          </a>
+          <a href="https://www.instagram.com/nexuscollege">
+            <i class="fab fa-instagram"></i>
+            <span>instagram.com/nexuscollege</span>
+          </a>
+        </div>
+        <div class="contact-info">
+          <p>Contact Us</p>
+          <p>+977-984232567701,554422</p>
+          <p>Maitidevi, Kathmandu, Nepal</p>
+          <p>nexuscollege@gmail.com</p>
+        </div>
+      <footer>
+        <p>&copy; 2023 Nexus College. All rights reserved.</p>
+    </footer>
+</body>
+</html>

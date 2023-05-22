@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .image-container {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .popup-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Year 2023</title>
+</head>
+<body>
+    <h1>Year 2023</h1>
+    <div id="imageGallery">
+        <div class="image-container">
+            <img src="images/classroom.jpg" alt="Image 1" onclick="showPopup('images/classroom.jpg')">
+        </div>
+        <div class="image-container">
+            <img src="images/cook.jpg" alt="Image 2" onclick="showPopup('images/cook.jpg')">
+        </div>
+        <div class="image-container">
+            <img src="images/cook2.jpg" alt="Image 3" onclick="showPopup('images/cook2.jpg')">
+        </div>
+        <div class="image-container">
+            <img src="images/cook3.jpg" alt="Image 4" onclick="showPopup('images/cook3.jpg')">
+        </div>
+        <div class="image-container">
+            <img src="images/cook4.jpg" alt="Image 5" onclick="showPopup('images/cook4.jpg')">
+        </div>
+        <div class="image-container">
+            <img src="images/friend.jpg" alt="Image 6" onclick="showPopup('images/friend.jpg')">
+        </div>
+    </div>
+
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <img class="popup-image" src="a" alt="Popup Image">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code here
+        var gallery = localStorage.getItem('gallery');
+        var images = gallery ? JSON.parse(gallery) : [];
+
+        var targetPage = 'year2023.html';
+
+        // Filter images based on the target page
+        var filteredImages = images.filter(function(image) {
+            return image.targetPage === targetPage;
+        });
+
+        // Display filtered images in the gallery
+        var imageGallery = document.getElementById('imageGallery');
+        filteredImages.forEach(function(image) {
+            var imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+
+            var imgElement = document.createElement('img');
+            imgElement.src = image.imageUrl;
+            imgElement.alt = image.altText;
+            imgElement.addEventListener('click', function() {
+                showPopup(image.imageUrl);
+            });
+
+            imageContainer.appendChild(imgElement);
+            imageGallery.appendChild(imageContainer);
+        });
+
+        var popupOverlay = document.querySelector('.popup-overlay');
+        var popupImage = document.querySelector('.popup-image');
+        var closeButton = document.querySelector('.close-button');
+
+        function showPopup(imageUrl) {
+            popupImage.src = imageUrl;
+            popupOverlay.style.display = 'block';
+            popupImage.style.display = 'block';
+        }
+
+        function closePopup() {
+            popupOverlay.style.display = 'none';
+            popupImage.style.display = 'none';
+            popupImage.src = '';
+        }
+    </script>
+</body>
+</html>

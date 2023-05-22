@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+   <style>
+    /* Add your custom styles here */
+    @media (max-width: 768px) {
+      /* Media query for screens smaller than 768px */
+      .menu {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .menu-dropdown {
+        display: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+      }
+
+      .menu-dropdown.show {
+        display: block;
+      }
+
+      /* Styles to maintain the navigation bar style */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu-toggle,
+      .menu-dropdown {
+        flex-basis: 50px; /* Adjust the width as needed */
+      }
+
+      .menu-toggle {
+        justify-content: center;
+      }
+
+      .menu-dropdown ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+      }
+
+      .menu-dropdown ul li {
+        margin-bottom: 10px;
+      }
+    }
+</style>
+
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login2.html" class="register">Login</a></li>
+      </ul>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <div class="menu-dropdown">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="gallery1.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="registrationform.html" class="register">Register</a></li>
+          <li><a href="login2.html" class="register">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h1>Welcome to Nexus College</h1>
+      <p id="haha">Prepare for a successful future with our high-quality education and innovative programs.</p>
+      <a href="about.html" class="learn-more">Learn More</a>
+      <div class="section-image">
+        <img src="college.jpg" alt="Image description">
+      </div>
+    </section>
+        
+  </main>
+
+  <h1>Why choose us?</h1>
+  <div class="box-button">
+    <h3>Certified Teachers</h3>
+    <div class="teacher-img">
+      <img src="teacher.jpg" alt="Certified Teachers">
+    </div>
+    <p>We have well-qualified teachers with certifications.</p>
+  </div>
+    
+  <div class="box-button">
+    <h3>Trending Courses</h3>
+    <div class="course-img">
+      <img src="courses.jpg" alt="Trending Courses">
+    </div>
+    <p>We offer a wide range of courses taught by our qualified teachers.</p>
+  </div>
+    
+  <div class="box-button">
+    <h3>Other Activities</h3>
+    <div class="activities-img">
+      <img src="activities.jpg" alt="Other Activities">
+    </div>
+    <p>In addition to education, we provide various other engaging activities.</p>
+  </div>
+    
+  <div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+      <i class="fab fa-facebook"></i>
+      <span>facebook.com/nexuscollege</span>
+    </a>
+    <a href="https://twitter.com/nexuscollege">
+      <i class="fab fa-twitter"></i>
+      <span>twitter.com/nexuscollege</span>
+    </a>
+    <a href="https://www.instagram.com/nexuscollege">
+      <i class="fab fa-instagram"></i>
+      <span>instagram.com/nexuscollege</span>
+    </a>
+  </div>
+  <div class="contact-info">
+    <p>Contact Us</p>
+    <p>+977-984232567701,554422</p>
+    <p>Maitidevi, Kathmandu, Nepal</p>
+    <p>nexuscollege@gmail.com</p>
+  </div>
+    
+  <footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuDropdown = document.querySelector('.menu-dropdown');
+
+    menuToggle.addEventListener('click', () => {
+      menuDropdown.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <input type="text" id="usernameInput" placeholder="Username">
+        <input type="password" id="passwordInput" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // JavaScript code here
+        var loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var usernameInput = document.getElementById('usernameInput');
+            var passwordInput = document.getElementById('passwordInput');
+
+            var username = usernameInput.value;
+            var password = passwordInput.value;
+
+            // Perform authentication (example: hardcoded credentials)
+            if (username === 'admin' && password === 'password') {
+                // Redirect to the image upload page
+                window.location.href = 'upload2.html';
+            } else {
+                alert('Invalid credentials. Please try again.');
+                usernameInput.value = '';
+                passwordInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

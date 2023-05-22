@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Nexus College - Courses</title>
+	<link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="bithons.css">
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Nexus College Logo">
+    <nav>
+        <ul class="menu">
+           <li><a href="home.html">Home</a></li>
+        <li class="dropdown">
+          <a title="About" href="#" class="dropbtn">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="story.html">Our Story</a>
+            <a href="mission.html">Our Mission</a>
+          </div>
+        </li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="registrationform.html" class="register">Register</a></li>
+        <li><a href="login2.html" class="register">Login</a></li>
+
+        </ul>
+    </nav>
+</header>
+<div class="course-description">
+    <h2>Bachelor in Hotel Management (Hons)</h2>
+    <p>A bachelor's degree in hotel management prepares students for careers in the hospitality industry by providing knowledge and skills in hotel operations, guest services, event management, and business administration.</p>
+    <p>Scope of BHM(Hons) <br>The scope of BHM (Bachelor of Hotel Management) involves learning about various aspects of the hospitality industry, including hotel operations, food and beverage management, event planning, front office management, and tourism. Graduates can pursue careers in hotels, resorts, restaurants, event management companies, and travel agencies.
+
+
+
+
+
+
+
+      Hotel operations management
+      Food and beverage management
+      Event planning and management
+      Front office management
+      Tourism and travel management
+      Restaurant management
+      Marketing and sales in the hospitality industry
+      Human resource management in hospitality
+      Financial management in hotels and resorts
+      Entrepreneurship in the hospitality sector.
+      
+      
+      
+      </p>
+    <p>Information about job placement after the course.<br>Our internship program provides college students 
+	with a guaranteed internship placement in premier hotels. Nexus College offers an internship 
+	in Malaysia, India, China, Bahrain, and Japan.
+
+The purpose of these programs is to provide students with hospitality management basics, to offer the possibility of gaining international experience, to prepare them to work in a professional environment as well as to increase the competitiveness of graduates in the labor market.</p>
+
+    <h3>Syllabus</h3>
+    <table>
+  <tr>
+    <th>Course Code</th>
+    <th>Course Title</th>
+    <th>Credit Hours</th>
+  </tr>
+  <tr>
+    <td>BHM100</td>
+    <td>Introduction in  Hotel Management</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>BHM101</td>
+    <td>Introduction to Hospitality Industry</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>BHM102</td>
+    <td>Food Production and Culinary Arts</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BHM103</td>
+    <td>Food and Beverage Service</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>BHM104</td>
+    <td>Front Office Operations</td>
+    <td>4</td>
+  </tr>
+  <!-- Add more rows for additional subjects -->
+  <tr>
+    <td>BHM105</td>
+    <td>Housekeeping Management</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BHM106</td>
+    <td>Tourism and Travel Management</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>BHM107</td>
+    <td>Event Management and Banquet Operations</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>BHM108</td>
+    <td>Financial Management in Hotels and Resorts</td>
+    <td>4</td>
+  </tr>
+  
+</table>
+
+</div>
+
+<div class="image-slideshow">
+    <img src="images/cook.jpg" alt="Image 1" class="active">
+    <img src="images/cook4.jpg" alt="Image 2">
+    <img src="images/graduate.jpg" alt="Image 3">
+
+    <div class="slideshow-controls">
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+
+    <div class="slideshow-indicators">
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+    </div>
+</div>
+<div class="useful-links">
+    <a href="https://www.facebook.com/nexuscollege" target="_blank">
+          <i class="fab fa-facebook"></i>
+          <span>facebook.com/nexuscollege</span>
+        </a>
+        <a href="https://twitter.com/nexuscollege">
+          <i class="fab fa-twitter"></i>
+          <span>twitter.com/nexuscollege</span>
+        </a>
+        <a href="https://www.instagram.com/nexuscollege">
+          <i class="fab fa-instagram"></i>
+          <span>instagram.com/nexuscollege</span>
+        </a>
+</div>
+<div class="contact-info">
+    <p>Contact Us</p>
+        <p>+977-984232567701,554422</p>
+        <p>Maitidevi, Kathmandu, Nepal</p>
+        <p>nexuscollege@gmail.com</p>
+</div>
+<footer>
+    <p>&copy; 2023 Nexus College. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll(".image-slideshow img");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const indicators = document.querySelectorAll(".slideshow-indicators button");
+
+        let currentIndex = 0;
+        let interval;
+
+        function showSlide(index) {
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            indicators.forEach((indicator) => {
+                indicator.classList.remove("active");
+            });
+
+            slides[index].classList.add("active");
+            indicators[index].classList.add("active");
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        }
+
+        function jumpToSlide(index) {
+            currentIndex = index;
+            showSlide(currentIndex);
+        }
+
+        function startSlideshow() {
+            interval = setInterval(() => {
+                nextSlide();
+            }, 2000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(interval);
+        }
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            stopSlideshow();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            stopSlideshow();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+                jumpToSlide(index);
+                stopSlideshow();
+            });
+        });
+
+        startSlideshow();
+    });
+</script>
+</body>
+</html>

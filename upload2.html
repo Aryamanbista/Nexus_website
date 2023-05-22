@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Nexus College Logo">
+        <nav>
+          <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+              <a title="About" href="#" class="dropbtn">About</a>
+              <div class="dropdown-content">
+                <a href="about.html">About Us</a>
+                <a href="story.html">Our Story</a>
+                <a href="mission.html">Our Mission</a>
+              </div>
+            </li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery1.html">Gallery</a></li> <!-- Added Gallery link -->
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="registrationform.html" class="register">Register</a></li>
+            <li><a href="login.html" class="register">Login</a></li>
+    
+          </ul>
+        </nav>
+      </header>
+    <h1>Image Upload</h1>
+    <form id="uploadForm">
+        <input type="text" id="imageUrlInput" placeholder="Image URL">
+        <input type="text" id="altTextInput" placeholder="Alt Text">
+        <select id="targetPageSelect">
+            <option value="year2020.html">2020</option>
+            <option value="year2021.html">2021</option>
+            <option value="year2023.html">2023</option>
+            <option value="year2024.html">2024</option>
+        </select>
+        <button type="submit">Add Image</button>
+    </form>
+
+    <script>
+        // JavaScript code here
+        var uploadForm = document.getElementById('uploadForm');
+        uploadForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var imageUrlInput = document.getElementById('imageUrlInput');
+            var altTextInput = document.getElementById('altTextInput');
+            var targetPageSelect = document.getElementById('targetPageSelect');
+
+            var imageUrl = imageUrlInput.value;
+            var altText = altTextInput.value;
+            var targetPage = targetPageSelect.value;
+
+            if (imageUrl && altText && targetPage) {
+                var gallery = localStorage.getItem('gallery');
+                var images = gallery ? JSON.parse(gallery) : [];
+
+                var newImage = {
+                    imageUrl: imageUrl,
+                    altText: altText,
+                    targetPage: targetPage
+                };
+
+                images.push(newImage);
+
+                localStorage.setItem('gallery', JSON.stringify(images));
+
+                imageUrlInput.value = '';
+                altTextInput.value = '';
+
+                alert('Image added successfully!');
+            }
+        });
+    </script>
+</body>
+</html>
